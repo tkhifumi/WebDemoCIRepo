@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'python3 -m py_compile demoapp/server.py'
+        sh 'python3 demoapp/server.py'
       }
     }
   }
