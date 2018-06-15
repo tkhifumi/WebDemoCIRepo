@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''echo \'Building...\'
-python -m py_compile demoapp/server.py'''
+        echo 'Building...'
+        sh 'python -m py_compile demoapp/server.py'
       }
     }
   }
