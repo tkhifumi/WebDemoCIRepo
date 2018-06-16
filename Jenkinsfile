@@ -21,7 +21,7 @@ pipeline {
           }
           post {
             success {
-              sh "kill -2 `ps -ef |grep python |grep server.py |awk '{print $2}'`"
+              sh "kill -2 `ps -ef |grep python |grep server.py |awk '{print ${2}}'`"
             }
           }
         }
