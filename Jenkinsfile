@@ -19,11 +19,7 @@ pipeline {
           steps {
             sleep 2
             sh 'robot login_tests'
-          }
-          post {
-            success {
-              sh "kill -9 `ps -ef |grep python |grep server.py |awk '{print \$2}'`"
-            }
+            sh "kill -2 `ps -ef |grep python |grep server.py |awk '{print \$2}'`"
           }
         }
       }
