@@ -21,7 +21,7 @@ pipeline {
             sh 'robot login_tests'
           }
           post {
-            success {
+            always {
               sh "kill -2 `ps -ef |grep python |grep server.py |awk '{print \$2}'`"
             }
           }
