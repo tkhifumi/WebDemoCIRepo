@@ -17,7 +17,8 @@ pipeline {
         }
         stage('Login Test') {
           steps {
-            sleep 5
+            sleep 2
+            sh 'robot login_tests'
           }
           post {
             success {
