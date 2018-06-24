@@ -18,8 +18,11 @@ pipeline {
         stage('Login Test') {
           steps {
             sleep 2
-            sh 'robot login_tests'
-            sh "kill -2 `ps -ef |grep python |grep server.py |awk '{print \$2}'`"
+          }
+          post {
+            always {
+              sh "kill -2 `ps -ef |grep python |grep server.py |awk '{print \$2}'`"
+            }
           }
         }
       }
